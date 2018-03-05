@@ -1,8 +1,18 @@
-<h1>Django-Blog: A blog app</h1>
+<html>
+<head>
+	<title>Django-Blog: A blog app</title>
+</head>
+<body>
+<h2>Welcome to Django-Blog</h2>
 {% if latest_posts %}
 <ul>
 	{% for post in latest_posts %}
-		<li>{{post.created_at}} | {{post.title}} | {{post.content}}</li>
+		<h3><a href="/blog/{{ post.id }}">{{ post.title }}</a></h3>
+		<p><em>{{ post.created_at }}</em></p>
+		<p>{{ post.content }}</p>
+		<br>
 	{% endfor %}
 </ul>
 {% endif %}
+</body>
+</html>
